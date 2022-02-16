@@ -17,7 +17,7 @@ public class Movienames {
         //Obtain a statement
         Statement st=conn.createStatement();
         
-        //Retrieving Data from the database
+        //Retrieving all  Data from the database
         ResultSet rs;
                 
         rs=st.executeQuery("select * from movies");
