@@ -17,16 +17,13 @@ public class Movienames {
         //Obtain a statement
         Statement st=conn.createStatement();
         
-        //Retrieving all  Data from the database
         ResultSet rs;
                 
-        rs=st.executeQuery("select Movie_name,Director_Name from movies;");
+        rs=st.executeQuery("Select Movie_name from movies where Year_of_Realease=\"2014-11-07\"");
         
             while(rs.next())
             {
-                 System.out.println();
-                for(int i=1;i<=2;i++)
-                    System.out.print(rs.getString(i)+"\t|");
+                    System.out.print(rs.getString(1));
             }
          
         rs.close();
