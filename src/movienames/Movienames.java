@@ -19,11 +19,11 @@ public class Movienames {
         
         ResultSet rs;
                 
-        rs=st.executeQuery("Select Movie_name from movies where Year_of_Realease=\"2014-11-07\"");
+        rs=st.executeQuery("select * from movies where director_name like \"P%\" or director_name like \"c%\"");
         
             while(rs.next())
             {
-                    System.out.print(rs.getString(1));
+                    System.out.println(rs.getString(1));
             }
          
         rs.close();
