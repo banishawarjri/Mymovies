@@ -20,16 +20,16 @@ public class Movienames {
         //Retrieving all  Data from the database
         ResultSet rs;
                 
-        rs=st.executeQuery("select * from movies");
+        rs=st.executeQuery("select Movie_name,Director_Name from movies;");
         
             while(rs.next())
             {
                  System.out.println();
-                for(int i=1;i<=5;i++)
+                for(int i=1;i<=2;i++)
                     System.out.print(rs.getString(i)+"\t|");
             }
          
-       rs.close();
+        rs.close();
         st.close();
         conn.close();
     }
