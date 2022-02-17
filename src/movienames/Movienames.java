@@ -17,16 +17,13 @@ public class Movienames {
         //Obtain a statement
         Statement st=conn.createStatement();
         
-        ResultSet rs;
+       
                 
-        rs=st.executeQuery("select distinct director_name from movies");
+        st.executeUpdate("alter table movies rename column Year_Of_Realease to Year_Of_Release");
         
-            while(rs.next())
-            {
-                    System.out.println(rs.getString(1));
-            }
+         System.out.println("Column Name Change");  
          
-        rs.close();
+      
         st.close();
         conn.close();
     }
