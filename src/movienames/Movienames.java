@@ -19,7 +19,7 @@ public class Movienames {
         
         ResultSet rs;
                 
-        rs=st.executeQuery("select * from movies where director_name like \"%a%\" and director_name like \"%n\"");
+        rs=st.executeQuery("select * from movies where director_name like \"C%\" or director_name like \"P%\"");
         
             while(rs.next())
             {
