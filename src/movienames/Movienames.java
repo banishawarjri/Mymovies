@@ -17,13 +17,18 @@ public class Movienames {
         //Obtain a statement
         Statement st=conn.createStatement();
         
-       
+        ResultSet rs;
                 
-        st.executeUpdate("alter table movies rename column Year_Of_Realease to Year_Of_Release");
-        
-         System.out.println("Column Name Change");  
+        rs=st.executeQuery("PRAGMA table_info(movies)");
+        while(rs.next())
+            {
+                 System.out.println();
+                for(int i=1;i<=5;i++)
+                    System.out.print(rs.getString(i)+"\t");
+            }
+           
          
-      
+        rs.close();
         st.close();
         conn.close();
     }
